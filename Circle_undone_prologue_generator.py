@@ -46,10 +46,13 @@ while True:
     elif select_investigators == "b":
         print("OK, how many investigators do you want me to select?")
         PlayerCount = input()
-        Investigators = random.sample(range(1,4),int(PlayerCount))
-        InvestigatorList = []
-        for i in range(0,int(PlayerCount)):
-            InvestigatorList.append(selectInvestigator(Investigators[i]))
+        if int(PlayerCount) ==4:
+            InvestigatorList = ["Gavriella Mizrah", "Jerome Davis", "Penny White", "Valentino Rivas"]
+        else:
+            Investigators = random.sample(range(1,4),int(PlayerCount))
+            InvestigatorList = []
+            for i in range(0,int(PlayerCount)):
+                InvestigatorList.append(selectInvestigator(Investigators[i]))
         break
 CluesDiscovered = round(clueDiscoverer(int(len(InvestigatorList))))
 InvestigatorFates = []
